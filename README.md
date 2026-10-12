@@ -1,4 +1,4 @@
-# Awas Scam — detektor pesan penipuan (on-device, hibrida AI + aturan)
+# Awas Scam : detektor pesan penipuan (on-device, hibrida AI + aturan)
 
 Aplikasi Flutter yang menandai pesan berpotensi penipuan (smishing): undian palsu,
 "mama/papa minta pulsa", phishing OTP/PIN, pinjol ilegal, link mencurigakan, dan modus
@@ -6,21 +6,21 @@ Aplikasi Flutter yang menandai pesan berpotensi penipuan (smishing): undian pals
 isi pesanmu tidak pernah dikirim ke mana pun.
 
 ## Fitur
-- **Periksa pesan** — tempel SMS/WhatsApp, dapatkan nilai risiko (Aman/Waspada/Bahaya) dengan
+- **Periksa pesan** : tempel SMS/WhatsApp, dapatkan nilai risiko (Aman/Waspada/Bahaya) dengan
   rincian **Skor pola + Skor AI + Gabungan**, alasan yang jelas, dan saran tindakan.
-- **Deteksi hibrida** — menggabungkan **mesin berbasis pola** (kata/fraze modus penipuan khas
+- **Deteksi hibrida** : menggabungkan **mesin berbasis pola** (kata/fraze modus penipuan khas
   Indonesia, analisis tautan) dengan **model AI ringan** (logistic regression bag-of-words yang
   dilatih dari dataset, ditanam sebagai kode Dart murni di `lib/services/ml_model.dart`).
   Model menangkap kasus yang luput dari aturan.
-- **Pindai SMS** (Android) — membaca kotak masuk dan menandai yang mencurigakan.
-- **Statistik** — dashboard: jumlah diperiksa/ditandai, sebaran tingkat risiko, modus
+- **Pindai SMS** (Android) : membaca kotak masuk dan menandai yang mencurigakan.
+- **Statistik** dashboard: jumlah diperiksa/ditandai, sebaran tingkat risiko, modus
   tersering, dan grafik 7 hari terakhir (menyambung ke visualisasi data).
-- **Cek Tautan** — bongkar sebuah URL tanpa membukanya: pemendek tautan, domain peniru merek,
+- **Cek Tautan**  bongkar sebuah URL tanpa membukanya: pemendek tautan, domain peniru merek,
   karakter non-Latin (punycode), IP mentah, trik "@", TLD berisiko, subdomain bertingkat.
-- **Pengaturan** — mode gelap dan tingkat sensitivitas deteksi (Rendah/Normal/Tinggi).
-- **Edukasi** — pustaka modus penipuan umum beserta ciri dan cara menanggapinya.
-- **Umpan balik** — tandai hasil "benar penipuan / salah tandai"; ikut masuk ke statistik.
-- **Transparan** — setiap keputusan disertai alasan, bukan kotak hitam.
+- **Pengaturan** : mode gelap dan tingkat sensitivitas deteksi (Rendah/Normal/Tinggi).
+- **Edukasi** : pustaka modus penipuan umum beserta ciri dan cara menanggapinya.
+- **Umpan balik** : tandai hasil "benar penipuan / salah tandai"; ikut masuk ke statistik.
+- **Transparan** : setiap keputusan disertai alasan, bukan kotak hitam.
 
 ## Cara kerja
 Inti deteksi: `lib/services/detector.dart`.
