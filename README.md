@@ -2,7 +2,7 @@
 
 Aplikasi Flutter yang menandai pesan berpotensi penipuan (smishing): undian palsu,
 "mama/papa minta pulsa", phishing OTP/PIN, pinjol ilegal, link mencurigakan, dan modus
-"paket tertahan di bea cukai". **Semua analisis berjalan di perangkat, tanpa internet** —
+"paket tertahan di bea cukai". **Semua analisis berjalan di perangkat, tanpa internet** 
 isi pesanmu tidak pernah dikirim ke mana pun.
 
 ## Fitur
