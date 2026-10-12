@@ -1,28 +1,8 @@
-import 'package:flutter/foundation.dart';
-import 'package:another_telephony/telephony.dart';
-
-/// Membaca SMS kotak masuk. Hanya Android; platform lain mengembalikan kosong.
+/// Baca SMS otomatis dinonaktifkan (plugin another_telephony dilepas agar
+/// build Android stabil & bebas warning KGP). Pengguna cukup menempel pesan
+/// secara manual. API dipertahankan agar kode lain tetap kompilasi.
 class SmsService {
-  final Telephony _telephony = Telephony.instance;
-
-  bool get supported => !kIsWeb && defaultTargetPlatform == TargetPlatform.android;
-
-  Future<bool> requestPermission() async {
-    if (!supported) return false;
-    final granted = await _telephony.requestSmsPermissions;
-    return granted ?? false;
-  }
-
-  Future<List<String>> readInbox({int limit = 50}) async {
-    if (!supported) return [];
-    final messages = await _telephony.getInboxSms(
-      columns: [SmsColumn.ADDRESS, SmsColumn.BODY, SmsColumn.DATE],
-      sortOrder: [OrderBy(SmsColumn.DATE, sort: Sort.DESC)],
-    );
-    return messages
-        .map((m) => m.body ?? '')
-        .where((b) => b.trim().isNotEmpty)
-        .take(limit)
-        .toList();
-  }
+  bool get supported => false;
+  Future<bool> requestPermission() async => false;
+  Future<List<String>> readInbox({int limit = 50}) async => const [];
 }
